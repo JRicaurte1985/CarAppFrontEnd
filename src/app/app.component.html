@@ -1,0 +1,105 @@
+<h1 id="tableLabel">Car Search</h1>
+
+<form [formGroup]="features">
+
+  <div class="centerForm">
+
+    <label class="container">
+      <input type="checkbox" formControlName="colorRed"> Red
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="colorWhite"> White
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="colorGray"> Gray
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="colorSilver"> Silver
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="colorBlack"> Black
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="hasSunRoof" /> Sun Roof <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="isFourWheelDrive" /> 4WD <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="hasLowMiles" /> Low Miles <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="hasPowerWindows" /> Power Windows <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="hasNavigation" /> Navigation <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+      <input type="checkbox" formControlName="hasHeatedSeats" /> Heated Seats <br />
+      <span class="checkmark"></span>
+    </label>
+
+    <br />
+    <button class="btn btn-primary" style="margin:5px;" type="button"
+            id="AnyFeature" (click)="getCriteria(); handleAny();">
+      Match Any Feature
+    </button>
+
+    <button class="btn btn-primary" style="margin:5px;" type="button"
+            id="AllFeatures" (click)="getCriteria(); handleAll();">
+      Match All Features
+    </button>
+  </div>
+</form>
+<br />
+
+<table class="styled-table" *ngIf="cars">
+  <thead>
+    <tr>
+      <th>Car Id</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Price</th>
+      <th>Sun Roof</th>
+      <th>4WD</th>
+      <th>Low Miles</th>
+      <th>Power Windows</th>
+      <th>Navigation</th>
+      <th>Heated Seats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of filteredResults">
+      <td>{{ car.carId }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.color }}</td>
+      <td>{{ car.price }}</td>
+      <td>{{ car.hasSunroof }}</td>
+      <td>{{ car.isFourWheelDrive }}</td>
+      <td>{{ car.hasLowMiles }}</td>
+      <td>{{ car.hasPowerWindows }}</td>
+      <td>{{ car.hasNavigation }}</td>
+      <td>{{ car.hasHeatedSeats }}</td>
+    </tr>
+  </tbody>
+</table>
