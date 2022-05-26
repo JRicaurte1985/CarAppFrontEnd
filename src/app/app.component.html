@@ -76,7 +76,7 @@
 <table class="styled-table" *ngIf="cars">
   <thead>
     <tr>
-      <th>Car Id</th>
+      <th>Make</th>
       <th>Year</th>
       <th>Color</th>
       <th>Price</th>
@@ -90,7 +90,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let car of filteredResults">
-      <td>{{ car.carId }}</td>
+      <td>{{ car.make }}</td>
       <td>{{ car.year }}</td>
       <td>{{ car.color }}</td>
       <td>{{ car.price }}</td>
